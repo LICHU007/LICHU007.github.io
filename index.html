@@ -62,7 +62,7 @@
         
         .projects-container { position: relative; }
         .project-list { display:flex; flex-direction:column; }
-        .project-item { display:flex; justify-content:space-between; align-items:center; padding:50px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:0.4s; position: relative; z-index: 2; }
+        .project-item { display:flex; justify-content:space-between; align-items:center; padding:50px 0; border-bottom:1px solid var(--border); cursor:pointer; transition:0.4s; position: relative; z-index: 2; text-decoration: none; color: inherit; }
         .project-item:first-child { border-top: 1px solid var(--border); }
         .project-item:hover { opacity: 0.5; padding-left: 20px; padding-right: 20px; }
         .project-item h3 { font-size:clamp(2rem, 4vw, 3.5rem); font-weight:400; font-family: var(--font-heading); }
@@ -152,17 +152,17 @@
         </div>
     </section>
 
-    <section class="section" id="projects">
+        <section class="section" id="projects">
         <div class="section-header">
             <h2>Selected Works</h2>
             <p class="section-desc">Hover to preview.</p>
         </div>
         <div class="project-preview"><img id="preview-img" src="" alt="preview"></div>
         <div class="project-list">
-            <div class="project-item" data-img="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1000&auto=format&fit=crop">
+            <a href="village.html" class="project-item" data-img="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1000&auto=format&fit=crop">
                 <h3>Village Culture</h3>
                 <p>Web Dev 2025</p>
-            </div>
+            </a>
             <div class="project-item" data-img="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop">
                 <h3>Neon Quiz App</h3>
                 <p>JavaScript</p>
@@ -173,6 +173,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="section" id="contact">
         <h2>Let's create<br>something iconic.</h2>
@@ -191,7 +192,7 @@
             </div>
             <button type="submit" class="magnetic">Send Message</button>
         </form>
-        </section>
+    </section>
 
     <footer>
         <p>© 2026 Liyaqat. Local Time: <span id="time">00:00</span></p>
@@ -271,6 +272,8 @@
 
         const cursor = document.getElementById("cursor");
         document.addEventListener("mousemove", e=> gsap.to(cursor,{x:e.clientX,y:e.clientY,duration:0.1}));
+        
+        // Target project-item links for hover effect
         document.querySelectorAll("a, button, .project-item, .menu, input, textarea").forEach(el=>{
             el.addEventListener("mouseenter",()=>document.body.classList.add("hovering"));
             el.addEventListener("mouseleave",()=>document.body.classList.remove("hovering"));
@@ -283,4 +286,4 @@
     </script>
 </body>
 </html>
-
+village.html
